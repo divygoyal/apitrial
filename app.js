@@ -1,4 +1,5 @@
 const express = require('express');
+import cors from 'cors';
 const mongoose = require('mongoose'); 
 const app = express();
 const dotenv = require('dotenv');
@@ -11,7 +12,7 @@ const PORT = process.env.PORT;
 
 const User = require('./UserSchema');
 const { json } = require('express');
-
+const cors = require('cors');
 
 const middleware =(req,res,next)=>{
     console.log("middleware mf");
