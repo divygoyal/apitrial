@@ -158,7 +158,7 @@ router.post('/contact',Authenticate,async(req,res)=>{
 })
 
 router.get('/logout',(req,res)=>{
-    res.clearCookie('jwtoken',{path:'/'});
+    res.clearCookie('jwtoken',{path:'/', httpOnly: false ,sameSite: "none",domain: "api-08sb.onrender.com",secure: true});
     res.status(200).json("logoud succesful");
 })
 router.get('/buyerslist',async (req,res)=>{
