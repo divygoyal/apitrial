@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 const corsOptions={
 
         credentials:true,
-         origin: 'https://msildg.onrender.com/'
+         origin: 'https://msildg.onrender.com'
     }
 
 const User = require('./UserSchema');
