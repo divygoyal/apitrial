@@ -9,7 +9,7 @@ require('./Db/Conn')
 
 const PORT = process.env.PORT;
 const corsOptions={
-        origin:true,
+
         credentials:true,
     }
 
