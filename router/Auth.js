@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs')
 const router = express.Router();
+const logger = require('logger');
 const Authenticate = require('../middleware/authenticate')
 console.log("hello1");
 // require('../../Db/Conn')
@@ -101,6 +102,9 @@ router.post('/signin' , async (req,res)=>{
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() +25892000000)
             },{ maxAge: 1000 * 60 * 10, httpOnly: false });
+            
+            logger.info('Cookie set successfully.');
+
             
             if(matchornot){
                 return res.json({message:"singed successfully"});
