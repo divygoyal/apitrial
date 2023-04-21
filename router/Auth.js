@@ -99,10 +99,8 @@ router.post('/signin' , async (req,res)=>{
             const token = await search.generateAuthToken();
             console.log(token);
             res.cookie("jwtoken", token, {
-                expires: new Date(Date.now() +25892000000),
-                httpOnly: true,
-                secure: true
-            });
+                expires: new Date(Date.now() +25892000000)
+            },{ maxAge: 1000 * 60 * 10, httpOnly: false });
             
             if(matchornot){
                 return res.json({message:"singed successfully"});
