@@ -103,7 +103,7 @@ router.post('/signin' , async (req,res)=>{
                 expires: new Date(Date.now() +25892000000)
             },{ maxAge: 1000 * 60 * 10, httpOnly: false });
             
-            logger.info('Cookie set successfully.');
+            
 
             
             if(matchornot){
