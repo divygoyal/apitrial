@@ -101,7 +101,7 @@ router.post('/signin' , async (req,res)=>{
             console.log(token);
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() +25892000000)
-            },{ maxAge: 1000 * 60 * 10, httpOnly: false ,SameSite: "none",domain: ".onrender.com"});
+            },{ maxAge: 1000 * 60 * 10, httpOnly: false ,sameSite: "none",domain: ".onrender.com"});
             
             
 
