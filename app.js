@@ -8,6 +8,10 @@ require('./Db/Conn')
 
 
 const PORT = process.env.PORT;
+const corsOptions={
+        origin:true,
+        credentials:true,
+    }
 
 const User = require('./UserSchema');
 const { json } = require('express');
@@ -34,7 +38,7 @@ cors({
 origin:"https://msildg.onrender.com"
 })
 );
-
+app.use(cors(corsOptions));
 console.log("hello");
 app.use((require('./router/Auth')));
 // app.use((require('./router/Auth')))
