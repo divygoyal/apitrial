@@ -20,10 +20,12 @@ const middleware =(req,res,next)=>{
 app.use(cookieParser());
 app.use(express.json());
 
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://msildg.onrender.com');
-  next();
-});
+
+app.use(
+cors({
+origin:"https://msildg.onrender.com"
+})
+);
 
 console.log("hello");
 app.use((require('./router/Auth')));
